@@ -2,7 +2,7 @@ var http = require('http')
   , exec = require('exec')
 
 const PORT = 33033
-  , PATH = '../html'
+  , PATH = '/var/www/gospely/socket'
 
 var deployServer = http.createServer(function(request, response) {
   if (request.url.search(/deploy\/?$/i) > 0) {
