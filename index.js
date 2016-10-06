@@ -5,19 +5,19 @@ const PORT = 6603
 
 console.log('listening port at: ' + PORT);
 
+const cmds = {
+  '/api': 'docker exec -d gospel_api cd /var/www/api && git pull',
+  '/admin': 'docker exec -d gospel_admin cd /usr/share/nginx/html && git pull',
+  '/socket': 'cd /var/www/gospely/socket && git pull',
+  '/index': 'cd /var/www/gospely/index && git pull',
+  '/dash': 'docker exec -d gospel_dash cd /var/www/dash && git pull',
+  '/ide': '',
+  '/webhook': 'cd /var/www/gospely/webhook && git pull'
+}
+
+console.log(cmds);
+
 var deployServer = http.createServer(function(request, response) {
-
-  const cmds = {
-    '/api': 'docker exec -d gospel_api cd /var/www/api && git pull',
-    '/admin': 'docker exec -d gospel_admin cd /usr/share/nginx/html && git pull',
-    '/socket': 'cd /var/www/gospely/socket && git pull',
-    '/index': 'cd /var/www/gospely/index && git pull',
-    '/dash': 'docker exec -d gospel_dash cd /var/www/dash && git pull',
-    '/ide': '',
-    '/webhook': 'cd /var/www/gospely/webhook && git pull'
-  }
-
-  console.log(cmds);
 
   var inCMDs = false,
       cmd = '';
