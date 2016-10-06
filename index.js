@@ -3,6 +3,8 @@ var http = require('http')
 
 const PORT = 6603
 
+console.log('listening port: ' + PORT);
+
 var deployServer = http.createServer(function(request, response) {
 
   const cmds = {
