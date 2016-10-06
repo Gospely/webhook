@@ -17,6 +17,8 @@ var deployServer = http.createServer(function(request, response) {
     '/webhook': 'cd /var/www/gospely/webhook && git pull'
   }
 
+  console.log(cmds);
+
   var inCMDs = false,
       cmd = '';
 
