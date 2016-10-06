@@ -1,11 +1,9 @@
 var http = require('http')
   , exec = require('exec')
 
-const PORT = 33033
-  , PATH = '/var/www/gospely/socket'
+const PORT = 66036
 
 var deployServer = http.createServer(function(request, response) {
-  console.log(request.url);
 
   const cmds = {
     '/api': 'docker exec gospel_api cd /var/www/api && git pull',
