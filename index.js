@@ -1,7 +1,7 @@
 var http = require('http')
   , exec = require('exec')
 
-const PORT = 66036
+const PORT = 6603
 
 var deployServer = http.createServer(function(request, response) {
 
