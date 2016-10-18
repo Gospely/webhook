@@ -13,6 +13,7 @@ const cmds = {
   '/dash': 'docker exec -d gospel_dash git pull',
   '/ide': '',
   '/webhook': 'cd /var/www/gospely/webhook && git pull'
+  '/deploy': 'cd /root/gospely/deploy && git pull'
 }
 
 console.log(cmds);
