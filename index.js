@@ -14,7 +14,8 @@ const cmds = {
   '/ide': '',
   '/webhook': 'cd /var/www/gospely/webhook && git pull && pm2 restart index',
   '/deploy': 'cd /root/gospely/deploy && git pull',
-  '/allocate': 'cd /root/gospely/allocate && git pull'
+  '/allocate': 'cd /root/gospely/allocate && git pull',
+  '/dodora_index': 'cd /var/www/dodora/index && git pull'
 }
 
 console.log(cmds);
