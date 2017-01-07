@@ -1,5 +1,5 @@
-var http = require('http')
-  , exec = require('exec')
+var http = require('http');
+var exec = require('child_process').exec;
 
 const PORT = 6603
 
@@ -11,7 +11,7 @@ const cmds = {
   '/socket': 'cd /var/www/gospely/socket && git pull',
   '/index': 'cd /var/www/gospely/index && git pull',
   '/dash': 'docker exec -d gospel_dash git pull',
-  '/ide': '',
+  '/ide': 'docker exec -d gospel_ide git pull',
   '/webhook': 'cd /var/www/gospely/webhook && git pull && pm2 restart index',
   '/deploy': 'cd /root/gospely/deploy && git pull',
   '/allocate': 'cd /root/gospely/allocate && git pull',
