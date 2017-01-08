@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Gospely/webhook#readme",
   "dependencies": {
-    "exec": "^0.2.1"
+    "exec": "^0.2.1",
+    "shelljs": "^0.7.5"
   }
 }

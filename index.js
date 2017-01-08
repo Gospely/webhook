@@ -1,5 +1,5 @@
 var http = require('http');
-var exec = require('child_process').exec;
+var exec = require("shelljs").exec;
 
 const PORT = 6603
 
@@ -15,7 +15,8 @@ const cmds = {
   '/webhook': 'cd /var/www/gospely/webhook && git pull && pm2 restart index',
   '/deploy': 'cd /root/gospely/deploy && git pull',
   '/allocate': 'cd /root/gospely/allocate && git pull',
-  '/dodora_index': 'cd /var/www/dodora/index && git pull'
+  '/dodora_index': 'cd /var/www/dodora/index && git pull',
+  '/test': 'echo "fuck"'
 }
 
 console.log(cmds);
@@ -37,14 +38,14 @@ var deployServer = http.createServer(function(request, response) {
 
     exec(cmd, function(err, out, code) {
       if (err instanceof Error) {
-        response.writeHead(500)
-        response.end('Server Internal Error.')
+        response.writeHead(500);
+        response.end('Server Internal Error.');
         throw err
       }
-      process.stderr.write(err)
-      process.stdout.write(out)
-      response.writeHead(200)
-      response.end('Deploy Done.')
+      process.stderr.write(err.toString());
+      process.stdout.write(out.toString());
+      response.writeHead(200);
+      response.end('Deploy Done.');
     })
 
   }else {
