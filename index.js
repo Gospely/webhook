@@ -6,7 +6,8 @@ const PORT = 6603
 console.log('listening port at: ' + PORT);
 
 const cmds = {
-  //'/api': 'docker exec -d gospel_api npm install && git pull',
+  '/api/dev': 'ssh root@ip docker exec -d gospel_api npm install && git pull',
+  '/api/build': 'docker exec -d gospel_api npm install && git pull',
   '/admin': 'docker exec -d gospel_admin git pull',
   '/socket': 'cd /var/www/gospely/socket && git pull',
   '/index': 'cd /var/www/gospely/index && git pull',
